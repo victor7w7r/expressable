@@ -7,7 +7,7 @@ import { router } from './routes/actions';
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
+const port: string = process.env.PORT || "4000";
 
 app.use(cors());
 app.use(express.json());
