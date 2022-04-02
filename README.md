@@ -23,6 +23,14 @@ DELETE http://localhost:4000/actions/:id
 }
 ```
 
+### Change to blank template
+
+``` bash
+$ git clone https://github.com/victor7w7r/expressable
+$ cd expressable
+$ git checkout blank
+```
+
 ## Extra Packages
 
 - cors: Middleware that can be used to enable Cross-origin resource sharing
@@ -32,7 +40,6 @@ DELETE http://localhost:4000/actions/:id
 ### Run and Develop (Consider using yarn)
 
 ``` bash
-$ git clone https://github.com/victor7w7r/expressable
 $ cd expressable
 $ yarn install
 $ yarn dev #Run develop
