@@ -13,6 +13,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/actions', router);
-app.use((res: Response) => res.status(404).json({msg: '404 not found'}));
+
+app.use((res: Response) => {
+    res.status(404).json({msg: '404 not found'})
+});
 
 app.listen((port as string), () => console.log('Server running at', port));
