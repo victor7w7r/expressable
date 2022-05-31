@@ -1,14 +1,14 @@
 
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
-export const getAction = (res: Response) => {
+export const getAction = (err: any, req: Request, res: Response, next: NextFunction) => {
 	res.status(200).json({
         ok: true,
         msg: 'Hi, please in PUT, POST, DELETE, use \'sample\' property in your body'
     });
 };
 
-export const postAction = (req: Request, res: Response) => {
+export const postAction = (err: any, req: Request, res: Response, next: NextFunction) => {
 
 	const { sample }: { sample: string } = req.body;
 
@@ -25,7 +25,7 @@ export const postAction = (req: Request, res: Response) => {
     }
 };
 
-export const putAction = (req: Request, res: Response) => {
+export const putAction = (err: any, req: Request, res: Response, next: NextFunction) => {
 
 	const { sample }: { sample: string } = req.body;
     const id: string = req.params.id || "";
@@ -43,7 +43,7 @@ export const putAction = (req: Request, res: Response) => {
     }
 };
 
-export const deleteAction = (req: Request, res: Response) => {
+export const deleteAction = (err: any, req: Request, res: Response, next: NextFunction) => {
 
 	const { sample }: { sample: string } = req.body;
     const id: string = req.params.id || "";

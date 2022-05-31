@@ -1,4 +1,4 @@
-import express, { Express, Response } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use('/actions', router);
 
-app.use((res: Response) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({msg: '404 not found'})
 });
 
